@@ -8,12 +8,12 @@ const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.childContainer}>
-        <View>
-          <Progress.Circle size={100} progress={0.5} thickness={20} />
+        <View style={styles.progressCircle}>
+          <Progress.Circle size={225} progress={0.55} thickness={25} color={'#004e98'}/>
         </View>
         <View style={styles.innerView}>
           <Text style={styles.text}>Date: 28th July, 2022</Text>
-          <Text style={styles.text}>Gas Concentration: 50ppm</Text>
+          <Text style={styles.text}>Gas Concentration: 50</Text>
           <Text style={styles.text}>Status: Safe</Text>
         </View>
       </View>
@@ -26,24 +26,27 @@ const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   childContainer: {
-    backgroundColor: colors.accent,
+    backgroundColor: colors.background,
     display: 'flex',
     flex: 1,
     padding: 35,
+    paddingTop: 40,
     justifyContent: 'center'
   },
 
   innerView: {
     borderColor: colors.primary,
-    borderWidth: 3,
+    backgroundColor: colors.secondary,
     borderRadius: 15,
     paddingHorizontal: 20,
-    paddingVertical: 20
+    paddingVertical: 40,
+    marginTop: 30
   },
 
   text: {
     color: '#000',
     fontSize: 18,
+    marginVertical: 3.5,
   },
 
   container: {
@@ -59,8 +62,14 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginHorizontal: 20,
     width: '90%'
+  },
+  
+  progressCircle: {
+    marginTop: -60,
+    marginBottom: 25,
+    display: 'flex',
+    alignItems: 'center'
   }
-
 })
 
 export default Home;

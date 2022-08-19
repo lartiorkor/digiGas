@@ -13,12 +13,12 @@ function SignUp({ navigation }){
             <TextInput value={password} onChangeText={(text) => setPassword(text)} placeholder='Password' style={styles.textInput} placeholderTextColor='#dad7c9'/>
             <TextInput value={confirmPassword} onChangeText={(text) => setConfirmPassword(text)} placeholder='Confirm Password' style={styles.textInput} placeholderTextColor='#dad7c9'/>
             <Pressable style={styles.button} onPress={() => navigation.navigate('Home')}>
-                <Text style={{ color:colors.accent, textAlign: 'center', fontWeight:'bold' }}>
+                <Text style={{ color: colors.background, textAlign: 'center', fontWeight:'bold' }}>
                     SIGNUP
                 </Text>
             </Pressable>
             <Pressable onPress={() => navigation.navigate('LogIn')}>
-                <Text style={{ color:'#dad7c9', textAlign: 'center'}}> Already have an account? <Text style={{textDecorationLine: 'underline'}}>Login</Text></Text>
+                <Text style={{ color:'#dad7c9', textAlign: 'center'}}> Already have an account? <Text style={{textDecorationLine: 'underline', color: colors.primary}}>Login</Text></Text>
             </Pressable>
         </View>
         

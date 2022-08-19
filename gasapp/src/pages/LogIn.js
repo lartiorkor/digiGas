@@ -11,10 +11,10 @@ function LogIn({ navigation }){
             <TextInput value={email} onChangeText={(text) => setEmail(text)} placeholder='Email' style={styles.textInput} placeholderTextColor='#dad7c9' />
             <TextInput value={password} onChangeText={(text) => setPassword(text)} placeholder='Password' style={styles.textInput} placeholderTextColor='#dad7c9' />
             <Pressable style={styles.button} onPress={() => navigation.navigate('Home')}>
-                <Text style={{ color:colors.accent, textAlign: 'center', fontWeight:'bold' }}> LOGIN </Text>
+                <Text style={{ color:colors.background, textAlign: 'center', fontWeight:'bold' }}> LOGIN </Text>
             </Pressable>
             <Pressable onPress={() => navigation.navigate('SignUp')}>
-                <Text style={{ color:'#dad7c9', textAlign: 'center'}}> Signup </Text>
+            <Text style={{ color:'#dad7c9', textAlign: 'center'}}> Don't have an account? <Text style={{textDecorationLine: 'underline', color: colors.primary}}>Signup</Text></Text>
             </Pressable>
         </View>
     )
@@ -22,7 +22,7 @@ function LogIn({ navigation }){
 
 const styles = StyleSheet.create({ 
     container: {
-        backgroundColor: colors.accent,
+        backgroundColor: colors.background,
         display: 'flex',
         flex: 1,
         padding: 35,
