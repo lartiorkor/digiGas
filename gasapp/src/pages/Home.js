@@ -13,7 +13,7 @@ const Home = ({ navigation }) => {
         </View>
         <View style={styles.innerView}>
           <Text style={styles.text}>Date: 28th July, 2022</Text>
-          <Text style={styles.text}>Gas Concentration: 50</Text>
+          <Text style={styles.text}>Gas Concentration: 50ppm</Text>
           <Text style={styles.text}>Status: Safe</Text>
         </View>
       </View>
@@ -26,27 +26,24 @@ const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   childContainer: {
-    backgroundColor: colors.background,
+    backgroundColor: colors.accent,
     display: 'flex',
     flex: 1,
     padding: 35,
-    paddingTop: 40,
     justifyContent: 'center'
   },
 
   innerView: {
     borderColor: colors.primary,
-    backgroundColor: colors.secondary,
+    borderWidth: 3,
     borderRadius: 15,
     paddingHorizontal: 20,
-    paddingVertical: 40,
-    marginTop: 30
+    paddingVertical: 20
   },
 
   text: {
     color: '#000',
     fontSize: 18,
-    marginVertical: 3.5,
   },
 
   container: {
@@ -62,14 +59,8 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginHorizontal: 20,
     width: '90%'
-  },
-  
-  progressCircle: {
-    marginTop: -60,
-    marginBottom: 25,
-    display: 'flex',
-    alignItems: 'center'
   }
+
 })
 
 export default Home;
