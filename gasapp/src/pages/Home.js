@@ -9,7 +9,7 @@ const Home = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.childContainer}>
         <View style={styles.progressCircle}>
-          <Progress.Circle size={225} progress={0.55} thickness={25} color={'#004e98'}/>
+          <Progress.Circle size={225} progress={0.55} thickness={28} color={'#004e98'}/>
         </View>
         <View style={styles.innerView}>
           <Text style={styles.text}>Date: 28th July, 2022</Text>
