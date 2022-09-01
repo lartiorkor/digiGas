@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "855761797400",
-    "project_id": "digi-gas",
-    "storage_bucket": "digi-gas.appspot.com"
+    "project_number": "345208381550",
+    "project_id": "gas-app-f83f8",
+    "storage_bucket": "gas-app-f83f8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:855761797400:android:9718d0f023d6ddd06e5e6d",
+        "mobilesdk_app_id": "1:345208381550:android:c824e0d58af3752931c67f",
         "android_client_info": {
           "package_name": "com.gasapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "855761797400-3hv6sbasqc561a8ct0kjop1g0hd7ipli.apps.googleusercontent.com",
+          "client_id": "345208381550-mocrr7porssc3atd8d7p750rnaj03qr8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCL3yfeov4N-EVIuG_4kY4pYkEnGHvcyxI"
+          "current_key": "AIzaSyD-8qn-_1T4U5Wwn1HMrZlgQ5rUJJIHGRk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "855761797400-3hv6sbasqc561a8ct0kjop1g0hd7ipli.apps.googleusercontent.com",
+              "client_id": "345208381550-mocrr7porssc3atd8d7p750rnaj03qr8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

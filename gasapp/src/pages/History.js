@@ -64,8 +64,8 @@ const data = [
 const renderItem = ({item}) => {
     return(
         <View style={styles.textContainer}>
-            <Text>{item.date}</Text>
-            <Text>{item.gasConcentration}</Text>
+            <Text style={{color:'black'}}>{item.date}</Text>
+            <Text style={{color:'black'}}>{item.gasConcentration}</Text>
         </View>
     )
 }

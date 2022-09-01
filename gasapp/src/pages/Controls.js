@@ -17,7 +17,7 @@ const Controls = () => {
 
 const styles=StyleSheet.create({
   container: {
-    backgroundColor: colors.accent,
+    backgroundColor: colors.background,
     display: 'flex',
     flex: 1,
     padding: 35,

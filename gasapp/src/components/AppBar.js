@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 const AppBar = () => {
   return (
     <View>
-      <Text></Text>
+      <Text>{title}</Text>
     </View>
   );
 }
