@@ -17,7 +17,7 @@ const Home = ({navigation}) => {
       <View style={styles.progressCircle}>
         <Progress.Circle
           size={250}
-          progress={0.55}
+          progress={0.12}
           thickness={32}
           color={'#004e98'}></Progress.Circle>
         <Text
