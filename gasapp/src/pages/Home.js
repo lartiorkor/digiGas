@@ -5,7 +5,7 @@ import auth from '@react-native-firebase/auth';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import colors from '../theme/Colors';
-import ModalContext from '../context/ModalContext';
+/*import ModalContext from '../context/ModalContext';*/
 import AppBar from '../components/AppBar';
 import HomeModal from '../components/HomeModal';
 
@@ -59,9 +59,10 @@ const Home = ({navigation}) => {
         <View
           style={{
             backgroundColor: colors.secondary,
-            paddingHorizontal: 30,
-            paddingVertical: 60,
+            paddingHorizontal: 35,
+            paddingVertical: 55,
             borderRadius: 15,
+            marginHorizontal: 17,
           }}>
           <Text style={styles.text}>Date: {today}</Text>
           <Text style={styles.text}>Gas Concentration: 50</Text>

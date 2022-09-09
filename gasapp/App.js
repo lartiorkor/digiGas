@@ -62,6 +62,7 @@ export default function App() {
                   headerTintColor: 'white',
                   headerRight: () => <View style={styles.iconContainer}></View>,
                   headerBackVisible: false,
+                  headerShown: false,
                 })}
               />
               <Stack.Screen
@@ -71,6 +72,7 @@ export default function App() {
                   headerStyle: {backgroundColor: colors.primary},
                   headerTintColor: 'white',
                   headerBackVisible: false,
+                  headerShown: false,
                   headerRight: () => (
                     <View style={styles.iconContainer}>
                       <Ionicons
@@ -97,6 +99,7 @@ export default function App() {
                   headerStyle: {backgroundColor: colors.primary},
                   headerTintColor: 'white',
                   headerBackVisible: false,
+                  headerShown: false,
                   headerRight: () => (
                     <View style={styles.iconContainer}>
                       <Ionicons
