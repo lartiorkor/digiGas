@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import auth from '@react-native-firebase/auth';
+import {Provider as PaperProvider} from 'react-native-paper';
 
 import LogIn from './src/pages/LogIn';
 import SignUp from './src/pages/SignUp';
@@ -31,109 +32,95 @@ export default function App() {
   if (initializing) return null;
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        {!user ? (
-          <>
-            <Stack.Screen
-              name="SignUp"
-              component={SignUp}
-              options={{
-                headerShown: false,
-              }}
-            />
-            <Stack.Screen
-              name="LogIn"
-              component={LogIn}
-              options={{
-                headerShown: false,
-              }}
-            />
-          </>
-        ) : (
-          <>
-            <Stack.Screen
-              name="Home"
-              component={Home}
-              options={({navigation}) => ({
-                headerStyle: {backgroundColor: colors.primary},
-                headerTintColor: 'white',
-                headerRight: () => (
-                  <View style={styles.iconContainer}>
-                    <Ionicons
-                      name="timer"
-                      size={27}
-                      color={colors.background}
-                      style={{marginRight: 10}}
-                      onPress={() => navigation.navigate('History')}
-                    />
-                    <Ionicons
-                      name="construct"
-                      size={25}
-                      color={colors.background}
-                      onPress={() => navigation.navigate('Controls')}
-                    />
-                  </View>
-                ),
-                headerBackVisible: false,
-              })}
-            />
-            <Stack.Screen
-              name="Controls"
-              component={Controls}
-              options={({navigation}) => ({
-                headerStyle: {backgroundColor: colors.primary},
-                headerTintColor: 'white',
-                headerBackVisible: false,
-                headerRight: () => (
-                  <View style={styles.iconContainer}>
-                    <Ionicons
-                      name="home"
-                      size={23}
-                      color={colors.background}
-                      style={{marginRight: 10}}
-                      onPress={() => navigation.navigate('Home')}
-                    />
-                    <Ionicons
-                      name="timer"
-                      size={25}
-                      color={colors.background}
-                      onPress={() => navigation.navigate('History')}
-                    />
-                  </View>
-                ),
-              })}
-            />
-            <Stack.Screen
-              name="History"
-              component={History}
-              options={({navigation}) => ({
-                headerStyle: {backgroundColor: colors.primary},
-                headerTintColor: 'white',
-                headerBackVisible: false,
-                headerRight: () => (
-                  <View style={styles.iconContainer}>
-                    <Ionicons
-                      name="home"
-                      size={25}
-                      color={colors.background}
-                      style={{marginRight: 10}}
-                      onPress={() => navigation.navigate('Home')}
-                    />
-                    <Ionicons
-                      name="construct"
-                      size={25}
-                      color={colors.background}
-                      onPress={() => navigation.navigate('Controls')}
-                    />
-                  </View>
-                ),
-              })}
-            />
-          </>
-        )}
-      </Stack.Navigator>
-    </NavigationContainer>
+    <PaperProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          {!user ? (
+            <>
+              <Stack.Screen
+                name="SignUp"
+                component={SignUp}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="LogIn"
+                component={LogIn}
+                options={{
+                  headerShown: false,
+                }}
+              />
+            </>
+          ) : (
+            <>
+              <Stack.Screen
+                name="Home"
+                component={Home}
+                options={({navigation}) => ({
+                  headerStyle: {backgroundColor: colors.primary},
+                  headerTintColor: 'white',
+                  headerRight: () => <View style={styles.iconContainer}></View>,
+                  headerBackVisible: false,
+                })}
+              />
+              <Stack.Screen
+                name="Controls"
+                component={Controls}
+                options={({navigation}) => ({
+                  headerStyle: {backgroundColor: colors.primary},
+                  headerTintColor: 'white',
+                  headerBackVisible: false,
+                  headerRight: () => (
+                    <View style={styles.iconContainer}>
+                      <Ionicons
+                        name="home"
+                        size={23}
+                        color={colors.background}
+                        style={{marginRight: 10}}
+                        onPress={() => navigation.navigate('Home')}
+                      />
+                      <Ionicons
+                        name="timer"
+                        size={25}
+                        color={colors.background}
+                        onPress={() => navigation.navigate('History')}
+                      />
+                    </View>
+                  ),
+                })}
+              />
+              <Stack.Screen
+                name="History"
+                component={History}
+                options={({navigation}) => ({
+                  headerStyle: {backgroundColor: colors.primary},
+                  headerTintColor: 'white',
+                  headerBackVisible: false,
+                  headerRight: () => (
+                    <View style={styles.iconContainer}>
+                      <Ionicons
+                        name="home"
+                        size={25}
+                        color={colors.background}
+                        style={{marginRight: 10}}
+                        onPress={() => navigation.navigate('Home')}
+                      />
+                      <Ionicons
+                        name="construct"
+                        size={25}
+                        color={colors.background}
+                        onPress={() => navigation.navigate('Controls')}
+                      />
+                    </View>
+                  ),
+                })}
+              />
+            </>
+          )}
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
 

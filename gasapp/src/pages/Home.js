@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Pressable} from 'react-native';
+import {View, Text, StyleSheet, Pressable, Modal} from 'react-native';
 import * as Progress from 'react-native-progress';
 import auth from '@react-native-firebase/auth';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import colors from '../theme/Colors';
+import ModalContext from '../context/ModalContext';
+import AppBar from '../components/AppBar';
+import HomeModal from '../components/HomeModal';
 
 const Home = ({navigation}) => {
   const logout = async () => {
@@ -11,13 +15,34 @@ const Home = ({navigation}) => {
     console.log('User signed out');
   };
 
+  const today = new Date().toDateString();
+
+  const [modalVisibility, setModalVisibility] = useState(false);
+  const [progressValue, setProgressValue] = useState(25);
+
+  const hideModal = () => {
+    setModalVisibility(false);
+  };
+
+  const openModal = () => {
+    setModalVisibility(true);
+  };
+
   return (
     <View style={styles.container}>
+      <AppBar title="Home" openModal={openModal} />
+      <HomeModal
+        hideModal={hideModal}
+        modalVisibility={modalVisibility}
+        logout={logout}
+        navigation={navigation}
+      />
+
       {/* <View style={styles.childContainer}> */}
       <View style={styles.progressCircle}>
         <Progress.Circle
           size={250}
-          progress={0.12}
+          progress={progressValue / 100}
           thickness={32}
           color={'#004e98'}></Progress.Circle>
         <Text
@@ -27,7 +52,7 @@ const Home = ({navigation}) => {
             bottom: 140,
             fontSize: 25,
           }}>
-          12%
+          {progressValue}%
         </Text>
       </View>
       <View style={styles.innerView}>
@@ -38,15 +63,11 @@ const Home = ({navigation}) => {
             paddingVertical: 60,
             borderRadius: 15,
           }}>
-          <Text style={styles.text}>Date: 28th July, 2022</Text>
+          <Text style={styles.text}>Date: {today}</Text>
           <Text style={styles.text}>Gas Concentration: 50</Text>
           <Text style={styles.text}>Status: Safe</Text>
         </View>
       </View>
-      {/* <Pressable style={styles.pressable} onPress={logout}>
-          <Text style={{}}>Logout</Text>
-        </Pressable> */}
-      {/* </View> */}
     </View>
   );
 };
@@ -76,7 +97,6 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flex: 1,
-    marginTop: 15,
   },
 
   pressable: {
